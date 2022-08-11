@@ -1,4 +1,5 @@
 class Item {
   String? title;
-  Item({this.title});
+  double? userRating;
+  Item({this.title, this.userRating});
 }

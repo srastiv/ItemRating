@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:item_rating/models/list_of_items.dart';
+import 'package:item_rating/models/item_Provider.dart';
 import 'package:provider/provider.dart';
-import 'models/list_of_items.dart';
+import 'models/item_Provider.dart';
 import 'login.dart';
 
 void main() {
