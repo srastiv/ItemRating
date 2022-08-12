@@ -24,10 +24,7 @@ class UsernamePage extends StatelessWidget {
                 ),
               );
             },
-            // shape: CircleBorder(
-            //   side: BorderSide(color: Colors.transparent),
-            // ),
-            child: Text("View Ratings"),
+            child: const Text("View Ratings"),
           ),
         ],
       ),
@@ -46,7 +43,7 @@ class UsernamePage extends StatelessWidget {
               direction: Axis.horizontal,
               allowHalfRating: true,
               itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+              itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
               itemBuilder: (context, _) => const Icon(
                 Icons.star,
                 color: Colors.amber,
@@ -55,7 +52,7 @@ class UsernamePage extends StatelessWidget {
                 Provider.of<ListOfItems>(context, listen: false)
                     .items[index]
                     .userRating = rating;
-                print(rating);
+                //print(rating);
               },
             ),
           );
