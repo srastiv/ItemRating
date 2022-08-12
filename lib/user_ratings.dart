@@ -9,27 +9,43 @@ class UserRatings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Item> list = Provider.of<ListOfItems>(context).getList();
+    List<Item> ratedItems = [];
     return Scaffold(
       appBar: AppBar(
         title: const Text('User Ratings'),
         centerTitle: false,
       ),
-      body: ListView.builder(
+      body:
+          // ratedItems.isEmpty
+          //     ? const Center(
+          //         child: Text(
+          //           "No Items have been rated",
+          //           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+          //         ),
+          //       )
+          //     :
+          ListView.builder(
         itemCount: list.where((element) {
           return element.userRating! > 0;
         }).length,
         itemBuilder: ((context, index) {
+          for (int i = 0; i <= list.length - 1; i++) {
+            if (Provider.of<ListOfItems>(context, listen: false)
+                    .items[i]
+                    .userRating! >
+                0) {
+              ratedItems.add(
+                  Provider.of<ListOfItems>(context, listen: false).items[i]);
+            }
+          }
           return ListTile(
-            title: Text(Provider.of<ListOfItems>(context).items[index].title!),
+            title: Text(ratedItems[index].title!), //title
             trailing: RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style,
                 children: <TextSpan>[
                   TextSpan(
-                    text: Provider.of<ListOfItems>(context)
-                        .items[index]
-                        .userRating
-                        .toString(),
+                    text: ratedItems[index].userRating.toString(), //itemRating
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const TextSpan(text: '/5'),
