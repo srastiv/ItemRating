@@ -24,8 +24,10 @@ class UsernamePage extends StatelessWidget {
                 ),
               );
             },
+            // shape: CircleBorder(
+            //   side: BorderSide(color: Colors.transparent),
+            // ),
             child: Text("View Ratings"),
-            shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
           ),
         ],
       ),

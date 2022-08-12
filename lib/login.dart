@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
             ),
             const SizedBox(height: 25),
             ElevatedButton(
-              child: Text('Login'),
+              child: const Text('Login'),
               onPressed: () {
                 final isValidForm = formKey.currentState!.validate();
                 if (isValidForm) {
@@ -73,7 +73,7 @@ class _LoginState extends State<Login> {
                 }
                 Provider.of<ListOfItems>(context, listen: false).usernameInput =
                     tc.text;
-                print(tc.text);
+                //print(tc.text);
                 Future.delayed(Duration(seconds: 1), () {
                   tc.clear();
                 });
